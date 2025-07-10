@@ -1,3 +1,7 @@
+import 'package:app_servicios/screens/proveedor_home_screen.dart';
+import 'package:app_servicios/screens/proveedor_mis_servicios_screen.dart';
+import 'package:app_servicios/screens/proveedor_profile_screen.dart';
+import 'package:app_servicios/screens/proveedor_solicitudes_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:app_servicios/screens/login_page.dart'; // Asegúrate que la ruta sea correcta
 import 'package:app_servicios/screens/home_screen.dart'; // Asegúrate que la ruta sea correcta
@@ -20,14 +24,18 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       // Define la ruta inicial de tu aplicación
-      initialRoute: '/',
+      initialRoute: '/proveedor',
       // Define todas las rutas de tu aplicación
       routes: {
         '/': (context) => LoginPage(), // Pantalla de Inicio de Sesión
         '/signup': (context) => SignUpPage(), // Pantalla de Registro
         '/home': (context) => HomePage(), // Pantalla de Inicio (Home)
-        '/profile': (context) => ProfilePage(), // Pantalla de Perfil de Usuario
-        // Para ServiceDetailPage, como requiere un argumento (el servicio),
+        '/profile': (context) => const ProfilePage(),
+        '/proveedor': (context) => const ProveedorHomeScreen(),
+        '/proveedor/servicios': (context) => const ProveedorServicioScreen(),
+        '/proveedor/solicitudes': (context) => const ProveedorSolicitudesScreen(),
+        '/proveedor/perfil': (context) => const ProveedorProfileScreen(),
+
          },
       // Si usas rutas generadas para manejar argumentos (como en ServiceDetailPage)
       onGenerateRoute: (settings) {

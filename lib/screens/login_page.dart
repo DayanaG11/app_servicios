@@ -3,7 +3,8 @@ import 'package:app_servicios/screens/sing_up_page.dart';
 import 'package:app_servicios/screens/home_screen.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key); // Añadido el key para buenas prácticas
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
   _LoginPageState createState() => _LoginPageState();
 }
@@ -57,21 +58,9 @@ class _LoginPageState extends State<LoginPage> {
               height: 50.0,
               child: ElevatedButton(
                 onPressed: () {
-                  // ** Aquí está la clave para la navegación a Home **
-                  // Por ahora, solo simula un inicio de sesión exitoso.
-                  // En una aplicación real, aquí iría la validación con Firebase.
                   print('Email: ${_emailController.text}');
                   print('Contraseña: ${_passwordController.text}');
-
-                  // Navegar a la pantalla de inicio (HomePage)
-
-                  Navigator.pushReplacementNamed(context, '/home'); // Usando ruta con nombre
-
-                  // O si no usas rutas con nombre:
-                  // Navigator.pushReplacement(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => HomePage()),
-                  // );
+                  Navigator.pushReplacementNamed(context, '/home');
                 },
                 child: Text(
                   'Iniciar Sesión',
@@ -87,16 +76,26 @@ class _LoginPageState extends State<LoginPage> {
               ),
             ),
             SizedBox(height: 16.0),
+
+            // 👇 Botón para entrar como proveedor
+            SizedBox(
+              width: double.infinity,
+              height: 50.0,
+              child: OutlinedButton(
+                onPressed: () {
+                  Navigator.pushReplacementNamed(context, '/proveedor');
+                },
+                child: Text(
+                  'Entrar como proveedor (demo)',
+                  style: TextStyle(fontSize: 16.0),
+                ),
+              ),
+            ),
+
+            SizedBox(height: 16.0),
             TextButton(
               onPressed: () {
-                // Navegar a la pantalla de registro
-                Navigator.pushNamed(context, '/signup'); // Usando ruta con nombre
-
-                // O si no usas rutas con nombre:
-                // Navigator.push(
-                //   context,
-                //   MaterialPageRoute(builder: (context) => SignUpPage()),
-                // );
+                Navigator.pushNamed(context, '/signup');
               },
               child: Text("¿No tienes una cuenta? Regístrate"),
             ),
