@@ -11,16 +11,25 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image_picker: ^1.0.7
   cupertino_icons: ^1.0.8
   geolocator: ^10.1.0
   permission_handler: ^11.3.0
   flutter_chat_ui: ^1.6.8
   flutter_chat_types: ^3.6.1
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^3.0.1
+  rename: ^2.1.1
+  flutter_launcher_icons: ^0.13.1
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/icon/app_icon.png"
 
 flutter:
   uses-material-design: true
