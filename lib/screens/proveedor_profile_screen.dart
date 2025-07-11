@@ -15,7 +15,7 @@ class _ProveedorProfileScreenState extends State<ProveedorProfileScreen> {
   XFile? _documento;
 
   Future<void> _tomarFotoDocumento() async {
-    final foto = await picker.pickImage(source: ImageSource.camera);
+    final foto = await picker.pickImage(source: ImageSource.camera );
     if (foto != null) {
       setState(() {
         _documento = foto;
